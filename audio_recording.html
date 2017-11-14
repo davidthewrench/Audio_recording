@@ -15,8 +15,7 @@
         // Once started, you need to allow Chrome to use the microphone
 		
         var recognition = new webkitSpeechRecognition();
-		//recognition.initAudio();
-        // Be default, Chrome will only return a single result.
+		// Be default, Chrome will only return a single result.
         // By enabling "continuous", Chrome will keep the microphone active.
         recognition.continuous = true;
         recognition.onresult = function(event) {
@@ -35,5 +34,8 @@
 </script>
 </head>
 <body>
+<p>
+	Hopefully, this is recording audio
+</p>
 </body>
 </html>
