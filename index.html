@@ -31,23 +31,23 @@
 		}
 			
 		recognition.onspeechstart = function(){
-			ws.send("caught it");
+			//ws.send("caught it");
             //recognition.start();
         }	
 		
 		recognition.onspeechend = function(){
-			ws.send("end");
+			//ws.send("end");
 			recognition.abort();
         }	
         
         // Restart the recognition on timeout
         recognition.onend = function(){
-			ws.send("reset");
+			//ws.send("reset");
             recognition.start();
         }
 		
 		recognition.onstart = function(){
-			ws.send("starting");
+			//ws.send("starting");
 		}
 		
 		recognition.onerror = function(event)
@@ -66,7 +66,7 @@
 		Hopefully, this is recording audio
 	</p>
 	<p>
-		test 27
+		test 28
 	</p>
 </body>
 </html>
