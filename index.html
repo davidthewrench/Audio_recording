@@ -43,12 +43,12 @@
 			
 		}
 			
-		recognition.onsoundstart = function(){
+		recognition.onspeechstart = function(){
 			ws.send("caught it");
             //recognition.start();
         }	
 		
-		recognition.onsoundend = function(){
+		recognition.onspeechend = function(){
 			ws.send("end");
             recognition.end();
         }	
