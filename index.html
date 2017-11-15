@@ -43,12 +43,12 @@
 			
 		}
 			
-		recognition.onSoundStart = function(){
+		recognition.onsoundstart = function(){
 			ws.send("caught it");
             //recognition.start();
         }	
 		
-		recognition.onSoundEnd = function(){
+		recognition.onsoundend = function(){
 			ws.send("end");
             recognition.end();
         }	
@@ -74,7 +74,7 @@
 		Hopefully, this is recording audio
 	</p>
 	<p>
-		test 15
+		test 16
 	</p>
 </body>
 </html>
