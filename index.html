@@ -17,7 +17,7 @@
 		// Be default, Chrome will only return a single result.
         // By enabling "continuous", Chrome will keep the microphone active.
         recognition.continuous = true;
-		recognition.interimResults = true;
+		//recognition.interimResults = true;
 		
         
         recognition.onresult = function(event) {
@@ -25,6 +25,8 @@
             var transcript = event.results[event.results.length-1][0].transcript;
             // Send the result string via WebSocket to the running Processing Sketch
 			ws.send(transcript);
+			
+			recognition.end();
 			
 		}
 			
@@ -64,7 +66,7 @@
 		Hopefully, this is recording audio
 	</p>
 	<p>
-		test 25
+		test 26
 	</p>
 </body>
 </html>
