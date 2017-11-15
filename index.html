@@ -29,6 +29,7 @@
 			ws.send(transcript);
 			if(confidence > .6)
 			{
+				ws.send("reset");
 				recognition.stop();
 			}
 		}
@@ -69,7 +70,7 @@
 		Hopefully, this is recording audio
 	</p>
 	<p>
-		test 29
+		test 30
 	</p>
 </body>
 </html>
