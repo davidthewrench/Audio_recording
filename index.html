@@ -17,7 +17,7 @@
 		// Be default, Chrome will only return a single result.
         // By enabling "continuous", Chrome will keep the microphone active.
         recognition.continuous = true;
-		//recogntion.interimResults = true;
+		recognition.interimResults = true;
 		
         
         recognition.onresult = function(event) {
@@ -26,7 +26,7 @@
             // Send the result string via WebSocket to the running Processing Sketch
             
 			
-			/*var interim_transcript = '';
+			var interim_transcript = '';
 
 			for (var i = event.resultIndex; i < event.results.length; ++i) {
 				if (event.results[i].isFinal) {
@@ -38,8 +38,8 @@
 			final_transcript = capitalize(final_transcript);
 			final_span.innerHTML = linebreak(final_transcript);
 			interim_span.innerHTML = linebreak(interim_transcript);
-			*/
-			ws.send(transcript);
+			
+			ws.send(interim_transcript);
 			
 		}
 			
