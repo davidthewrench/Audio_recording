@@ -29,7 +29,7 @@
 			ws.send(transcript);
 			if(confidence > .6)
 			{
-				ws.send("reset");
+				ws.send("---");
 				recognition.stop();
 			}
 		}
