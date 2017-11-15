@@ -23,11 +23,14 @@
         recognition.onresult = function(event) {
             // Get the current result from the results object
             var transcript = event.results[event.results.length-1][0].transcript;
+			var confidence = event.results[event.results.length-1][0].confidence;
             // Send the result string via WebSocket to the running Processing Sketch
+			
 			ws.send(transcript);
-			
-			recognition.stop();
-			
+			if(confidence > .6)
+			{
+				recognition.stop();
+			}
 		}
 			
 		recognition.onspeechstart = function(){
@@ -66,7 +69,7 @@
 		Hopefully, this is recording audio
 	</p>
 	<p>
-		test 28
+		test 29
 	</p>
 </body>
 </html>
