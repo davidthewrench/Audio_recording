@@ -26,7 +26,7 @@
             // Send the result string via WebSocket to the running Processing Sketch
             
 			
-			var interim_transcript = '';
+			/*var interim_transcript = '';
 
 			for (var i = event.resultIndex; i < event.results.length; ++i) {
 				if (event.results[i].isFinal) {
@@ -38,12 +38,21 @@
 			final_transcript = capitalize(final_transcript);
 			final_span.innerHTML = linebreak(final_transcript);
 			interim_span.innerHTML = linebreak(interim_transcript);
-			
-			ws.send(interim_transcript);
+			*/
+			ws.send(transcript);
 			
 		}
 			
-			
+		recognition.onSoundStart = function(){
+			ws.send("caught it");
+            //recognition.start();
+        }	
+		
+		recognition.onSoundEnd = function(){
+			ws.send("end");
+            recognition.end();
+			recognition.start();
+        }	
         
         // Restart the recognition on timeout
         recognition.onend = function(){
@@ -66,7 +75,7 @@
 		Hopefully, this is recording audio
 	</p>
 	<p>
-		test 13
+		test 14
 	</p>
 </body>
 </html>
