@@ -26,8 +26,6 @@
             // Send the result string via WebSocket to the running Processing Sketch
 			ws.send(transcript);
 			
-			
-			recognition.abort();
 		}
 			
 		recognition.onspeechstart = function(){
@@ -37,7 +35,7 @@
 		
 		recognition.onspeechend = function(){
 			ws.send("end");
-			recognition.end();
+			recognition.abort();
         }	
         
         // Restart the recognition on timeout
@@ -66,7 +64,7 @@
 		Hopefully, this is recording audio
 	</p>
 	<p>
-		test 24
+		test 25
 	</p>
 </body>
 </html>
